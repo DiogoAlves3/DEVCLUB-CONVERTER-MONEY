@@ -86,7 +86,7 @@ section{
     gap: 4px;
 }
 
-.currency-value{
+.currency-value-to-convert, .currency-value-converted{
     color: #777777;
     font-family: Roboto;
     font-size: 18px;
