@@ -6,9 +6,8 @@ function convertvalues(){
     const currencyValueToConvert = document.querySelector(".currency-value-to-convert")
     const currencyvalueconverted = document.querySelector(".currency-value-converted")
     const convertcurrency = document.querySelector(".convert-currency").value
-    const dolartoday = 2.0
-    const eurotoday = 6.0
-
+    const dolartoday = 4.99
+    const eurotoday = 5.38
 
     const convertedolar = inputcurrencyvalue / dolartoday
 
@@ -33,11 +32,27 @@ function convertvalues(){
         currency: "BRL"
     }).format(inputcurrencyvalue)
 
-
-
     console.log(convertedolar)
+ }
 
-}
+ function changecurrency() {
 
+    const currencyName = document.getElementById("currency-name")
+    const currencyImage = document.querySelector(".currency-img")
 
+    if (convertcurrency.value == "dolar"){
+        currencyName.innerHTML = "Dólar Americano"
+        currencyImage.src = "./eua.png"
+    }
+
+    if (convertcurrency.value == "euro"){
+        currencyName.innerHTML = "Euro"
+        currencyImage.src = "./eur.png"
+    }
+
+    convertvalues()
+
+ }
+
+convertcurrency.addEventListener("change", changecurrency)
 convertbutton.addEventListener("click", convertvalues)
